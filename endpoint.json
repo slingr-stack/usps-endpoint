@@ -9,23 +9,8 @@
             {
                 "name": "default",
                 "label": "Default",
-                "memory": 384,
-                "offHeapMinFactor": 1.5,
+                "memory": 256,
                 "description": "Default configuration"
-            },
-            {
-                "name": "bigFiles",
-                "label": "Big files",
-                "memory": 512,
-                "offHeapMinFactor": 2,
-                "description": "Can process files up to 50MB"
-            },
-            {
-                "name": "hugeFiles",
-                "label": "Huge files",
-                "memory": 1024,
-                "offHeapMinFactor": 5,
-                "description": "Can process files up to 200MB"
             }
         ],
         "allowMultipleInstances": true
@@ -35,7 +20,12 @@
     "status": "ACTIVE",
     "stores": [],
     "events": [],
-    "functions": [],
+    "functions": [
+        {
+            "label": "Track",
+            "name": "_track"
+        }
+    ],
     "scripts":[],
     "listeners":[],
     "configuration":[]

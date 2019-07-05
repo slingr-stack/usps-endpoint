@@ -1,6 +1,7 @@
 package io.slingr.endpoints.usps;
 
 import io.slingr.endpoints.Endpoint;
+import io.slingr.endpoints.framework.annotations.EndpointFunction;
 import io.slingr.endpoints.framework.annotations.SlingrEndpoint;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,5 +20,11 @@ public class USPS extends Endpoint {
     public void endpointStarted() {
     }
 
+
+    @EndpointFunction(name = "_track")
+    public void track() {
+
+        logger.info("Should track");
+    }
 
 }
