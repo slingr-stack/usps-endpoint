@@ -35,7 +35,7 @@ public class UspsEndpoint extends HttpEndpoint {
     }
 
 
-    @EndpointFunction(name = "_trackShipping")
+    @EndpointFunction(name = "")
     public Json trackShipping(FunctionRequest request) {
         Json params = request.getJsonParams();
         logger.info(String.format("Tracking package [%s]", params.string("trackId")));
