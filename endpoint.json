@@ -15,26 +15,22 @@
         ],
         "allowMultipleInstances": true
     },
-    "icon48": "https://storage.googleapis.com/static.slingrs.io/platform/endpoints/usps.png",
+    "icon48": "https://storage.googleapis.com/slingr-prod-platform/platform/endpoints/usps.png",
     "configurationHelpUrl": "/endpoints_usps.html",
     "status": "ACTIVE",
     "stores": [],
     "events": [],
     "functions": [
         {
-            "label": "Track",
-            "name": "_track"
+            "label": "Track shipping",
+            "name": "_trackShipping"
         }
     ],
-    "scripts":[],
+    "scripts":[
+        "api.js"
+    ],
     "listeners":[],
     "configuration":[
-        {
-            "name": "apiUrl",
-            "label": "API URL",
-            "type": "text",
-            "required": true
-        },
         {
             "name": "username",
             "label": "Username",
