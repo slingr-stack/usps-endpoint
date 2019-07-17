@@ -34,14 +34,15 @@ public class UspsEndpoint extends HttpEndpoint {
         return "http://production.shippingapis.com";
     }
 
-
     @EndpointFunction(name = "_trackShipping")
     public Json trackShipping(FunctionRequest request) {
         Json params = request.getJsonParams();
         logger.info(String.format("Tracking package [%s]", params.string("trackId")));
+        boolean displayOnly = Boolean.TRUE.equals(params.object("forDisplayFormat"));
 
+        String shippingRequestParams = displayOnly ? ShippingRequest.buildTrackRequest(username, params.string("trackId")) : ShippingRequest.buildTrackFieldRequest(username, params.string("trackId"));
         Json shippingRequest = Json.map();
-        shippingRequest.set("path", ShippingRequest.buildRequest(username, params.string("trackId")));
+        shippingRequest.set("path", shippingRequestParams);
         return httpService().defaultGetRequest(shippingRequest);
     }
 
