@@ -21,7 +21,10 @@ public class ShippingRequest {
         request += "&XML=";
         request += "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>";
         request += "<TrackFieldRequest USERID=\"" + userId + "\">";
-        request += "    <TrackID ID=\"" + trackId + "\"></TrackID>";
+        request += "    <Revision>1</Revision>";
+        request += "    <ClientIp>127.0.0.1</ClientIp>";
+        request += "    <SourceId>Slingr</SourceId>";
+        request += "    <TrackID ID=\"" + trackId + "\"/>";
         request += "</TrackFieldRequest>";
         return request;
     }
